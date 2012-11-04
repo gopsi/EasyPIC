@@ -15,12 +15,9 @@ The libraries assume you are using one of the compilers available from Microchip
 
 ## Questions and Support
 * **General Support** is currently being handled by me.  Feel free to email me, leave a comment on [my blog](http://sidwar.com), or send me a message via [Twitter](https://twitter.com/sidwarkd) or [Facebook](https://facebook.com/kevin.sidwar).
-* **Bugs** in the EasyPIC libraries can be reported using the [issues tracker](https://github.com/EasyPIC/issues).   
+* **Bugs** in the EasyPIC libraries can be reported using the [issues tracker](https://github.com/sidwarkd/EasyPIC/issues).   
 Please provide as much details about your test setup as possible (device, modules used, etc).  
-* **Feature Requests** can also be posted to the [issues tracker](https://github.com/EasyPIC/issues).
+* **Feature Requests** can also be posted to the [issues tracker](https://github.com/sidwarkd/EasyPIC/issues).
 
 ## License
-Much of the EasyPIC project is a wrapper around the existing Microchip Application library code which is bound under it's own license terms which can be found...
-
-All other code not covered by the Microchip Software License Agreement is released under
-Released under the [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/) license.
+See [License.md](https://github.com/sidwarkd/EasyPIC/blob/master/LICENSE.md) in this project.

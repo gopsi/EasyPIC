@@ -2,9 +2,9 @@
 
 ## Creating a New Project
 1. Clone the EasyPIC project
-'''sh
+```sh
 git clone blah blah blah
-'''
+```
 2. Open MPLABX
 3. Select **File->New Project**
 4. Select **Microchip Embedded** from the <i>Categories</i> window and **Standalone Project** from the <i>Projects</i> window and click **Next**

@@ -1,3 +1,4 @@
+#License Information
 Much of the EasyPIC project is a wrapper around the existing Microchip Application library code which is bound under it's own license terms which can be found in Microchip Application Solutions Users Agreement.pdf which is a part of the application library download from Microchip.
 
 All other code not covered by the Microchip Software License Agreement is released under the [Creative Commons Attribution-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-sa/3.0/) license.
