@@ -1,5 +1,5 @@
-#ifndef EasyPIC_APP_H
-#define EasyPIC_APP_H
+#ifndef EASYPIC_APP_H
+#define EASYPIC_APP_H
 
 #include "appconfig.h"
 #include <pl_base.h>

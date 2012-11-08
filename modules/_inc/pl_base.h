@@ -1,5 +1,5 @@
-#ifndef EasyPIC_BASE_H
-#define EasyPIC_BASE_H
+#ifndef EASYPIC_BASE_H
+#define EASYPIC_BASE_H
 
 #include <base/compiler.h>
 #include <base/GenericTypeDefs.h>

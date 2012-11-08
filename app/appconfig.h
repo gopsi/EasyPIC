@@ -1,5 +1,5 @@
-#ifndef EasyPIC_APPCONFIG_H
-#define EasyPIC_APPCONFIG_H
+#ifndef EASYPIC_APPCONFIG_H
+#define EASYPIC_APPCONFIG_H
 
 // ==================================================================
 //                            OVERVIEW
@@ -17,9 +17,11 @@
 // Because all of the module source code is included in the projects
 // to make setup easier, we use #defines to actually include or 
 // exclude the code from the build process.  Uncomment the items 
-// below that you wish to use in your project.
+// below that you wish to use in your project.  NOTE: You still need
+// to include the appropriate header files in the source files that
+// require a specific modules's functionality
 
-//
+// #define EASYPIC_DELAY
 
 
 // ==================================================================
@@ -56,30 +58,30 @@
 
 #if defined(APPLICATION_ENTRY_POINT)
     #ifdef __18F27J53
-        #pragma config WDTEN	= OFF          // Watchdog disabled
-        #pragma config PLLDIV	= 2		       // 8 MHz crystal
-        #pragma config CFGPLLEN = ON		   // PLL Enabled
-        #pragma config STVREN	= ON		   // Stack over/underflow reset enabled
-        #pragma config XINST	= OFF		   // Extended instruction set off
-        #pragma config CPUDIV	= OSC3_PLL3	   // CPU system clock divide by 3
-        #pragma config CP0	    = OFF	       // Disable code protect
-        #pragma config OSC	    = INTOSCPLL	   // Use internal oscillator
-        #pragma config SOSCSEL 	= DIG
-        #pragma config CLKOEC	= OFF		// CLKO output disabled on RA6
-        #pragma config FCMEN	= OFF		// Fail-Safe clock monitor off
-        #pragma config IESO	    = OFF	    // Internal/External osc switch over mode
-        #pragma config WDTPS 	= 32768		// WD post scalar
-        #pragma config DSWDTOSC	= INTOSCREF	// DSWDT uses INTRC
-        #pragma config RTCOSC	= INTOSCREF	// RTCC clock select
-        #pragma config DSBOREN	= OFF		// Deep Sleep BOR
-        #pragma config DSWDTEN	= OFF		// Deep Sleep WDT
-        #pragma config DSWDTPS	= K32		// Deep Sleep WDT Postscalar
-        #pragma config IOL1WAY	= OFF		// IOCLOCK one-way enable
-        #pragma config ADCSEL	= BIT10		// ADC 10 bit
-        #pragma config MSSP7B_EN    = MSK5		// MSSP address masking
-        #pragma config WPCFG	= OFF		// Config words page write protect
-        #pragma config WPDIS	= OFF		// WPCFG bits ignored
-        #pragma config LS48MHZ	= SYS48X8
+        #pragma config WDTEN    = OFF          // Watchdog disabled
+        #pragma config PLLDIV   = 2            // 8 MHz crystal
+        #pragma config CFGPLLEN = ON           // PLL Enabled
+        #pragma config STVREN   = ON           // Stack over/underflow reset enabled
+        #pragma config XINST    = OFF          // Extended instruction set off
+        #pragma config CPUDIV   = OSC3_PLL3    // CPU system clock divide by 3
+        #pragma config CP0      = OFF          // Disable code protect
+        #pragma config OSC      = INTOSCPLL    // Use internal oscillator
+        #pragma config SOSCSEL  = DIG
+        #pragma config CLKOEC   = OFF       // CLKO output disabled on RA6
+        #pragma config FCMEN    = OFF       // Fail-Safe clock monitor off
+        #pragma config IESO     = OFF       // Internal/External osc switch over mode
+        #pragma config WDTPS    = 32768     // WD post scalar
+        #pragma config DSWDTOSC = INTOSCREF // DSWDT uses INTRC
+        #pragma config RTCOSC   = INTOSCREF // RTCC clock select
+        #pragma config DSBOREN  = OFF       // Deep Sleep BOR
+        #pragma config DSWDTEN  = OFF       // Deep Sleep WDT
+        #pragma config DSWDTPS  = K32       // Deep Sleep WDT Postscalar
+        #pragma config IOL1WAY  = OFF       // IOCLOCK one-way enable
+        #pragma config ADCSEL   = BIT10     // ADC 10 bit
+        #pragma config MSSP7B_EN    = MSK5      // MSSP address masking
+        #pragma config WPCFG    = OFF       // Config words page write protect
+        #pragma config WPDIS    = OFF       // WPCFG bits ignored
+        #pragma config LS48MHZ  = SYS48X8
     #elif defined(__PIC32MX__)
         // The oscillator settings here create an 80MHz system clock
         #pragma config FVBUSONIO        = ON
@@ -144,6 +146,14 @@
 // in PIC functionality like USART, SPI, I2C, etc will be configured
 // in the modules which use them.
 
+
+// ==================================================================
+//                      MODULE CONFIGURATION
+// ==================================================================
+// The following sections are the configuration sections for the 
+// various supported modules. The idea here is to have all config
+// data in this file instead of having to modify header files in each
+// of the different modules
 
 #endif
 

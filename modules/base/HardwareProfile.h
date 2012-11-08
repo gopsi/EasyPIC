@@ -1,5 +1,5 @@
 // This is a stub file that is included in the include search path because
-// several of the Microchip libraries look for it
+// several of the Microchip libraries look for it by name specifically
 
 #ifndef HARDWARE_PROFILE_H
 #define HARDWARE_PROFILE_H

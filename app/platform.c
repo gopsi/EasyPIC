@@ -55,7 +55,7 @@ void PLATFORM_Initialize()
   // power consumption and prevent floating pins.  Only 
   // hardware-specific operation should be performed here.  
   // Application-specific initialization and state configuration
-  // should be done in the PLATFORM_AppConfigure call.  If you are
+  // should be done in another call in your project.  If you are
   // satisfied wih the default power on state of the device you can
   // simply remove the error below and leave the function empty.
 

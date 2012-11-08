@@ -7,9 +7,9 @@
  * Dependencies:    Compiler.h
  * Processor:       PIC18, PIC24F, PIC24H, dsPIC30F, dsPIC33F, PIC32
  * Compiler:        Microchip C32 v1.05 or higher
- *					Microchip C30 v3.12 or higher
- *					Microchip C18 v3.30 or higher
- *					HI-TECH PICC-18 PRO 9.63PL2 or higher
+ *          Microchip C30 v3.12 or higher
+ *          Microchip C18 v3.30 or higher
+ *          HI-TECH PICC-18 PRO 9.63PL2 or higher
  * Company:         Microchip Technology, Inc.
  *
  * Software License Agreement
@@ -23,9 +23,9 @@
  *      digital signal controller product ("Device") which is
  *      integrated into Licensee's product; or
  * (ii) ONLY the Software driver source files ENC28J60.c, ENC28J60.h,
- *		ENCX24J600.c and ENCX24J600.h ported to a non-Microchip device
- *		used in conjunction with a Microchip ethernet controller for
- *		the sole purpose of interfacing with the ethernet controller.
+ *    ENCX24J600.c and ENCX24J600.h ported to a non-Microchip device
+ *    used in conjunction with a Microchip ethernet controller for
+ *    the sole purpose of interfacing with the ethernet controller.
  *
  * You should refer to the license agreement accompanying this
  * Software for additional information regarding your rights and
@@ -48,12 +48,25 @@
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * Nilesh Rajbharti     5/9/02  Original        (Rev 1.0)
  ********************************************************************/
+
+// ==================================================================
+//                        EasyPIC Change Log
+// ==================================================================
+// Date         Change
+// ------------------------------------------------------------------
+// 11/06/2012   Renamed file to simpledelay.c. Replaced #include of
+//              TCPIP.h with EasyPIC includes. Wrapped functions in
+//              #ifdef EASYPIC_DELAY.
+
+
 #ifndef __DELAY_C
 #define __DELAY_C
 
 #include <appconfig.h>
 #include <pl_base.h>
 #include <pl_delay.h>
+
+#ifdef EASYPIC_DELAY
 
 #if !defined(__18CXX) || defined(HI_TECH_C)
 void DelayMs(WORD ms)
@@ -68,23 +81,24 @@ void DelayMs(WORD ms)
         }
     }
 }
-#endif	//#if !defined(__18CXX) || defined(HI_TECH_C)
+#endif  //#if !defined(__18CXX) || defined(HI_TECH_C)
 
 
 #if defined(__C30__) || defined(__C32__)
 void Delay10us(DWORD dwCount)
 {
-	volatile DWORD _dcnt;
+  volatile DWORD _dcnt;
 
-	_dcnt = dwCount*((DWORD)(0.00001/(1.0/GetInstructionClock())/10));
-	while(_dcnt--)
-	{
-		#if defined(__C32__)
-			Nop();
-			Nop();
-			Nop();
-		#endif
-	}
+  _dcnt = dwCount*((DWORD)(0.00001/(1.0/GetInstructionClock())/10));
+  while(_dcnt--)
+  {
+    #if defined(__C32__)
+      Nop();
+      Nop();
+      Nop();
+    #endif
+  }
 }
+#endif // EASYPIC_DELAY define
 #endif
 #endif

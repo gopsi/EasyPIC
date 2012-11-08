@@ -2,8 +2,8 @@
 
 ## Creating a New Project
 1. Clone the EasyPIC project
-```sh
-git clone blah blah blah
+```bat
+git clone https://github.com/sidwarkd/EasyPIC
 ```
 2. Open MPLABX
 3. Select **File->New Project**
@@ -19,8 +19,8 @@ git clone blah blah blah
 That's it.  You should now attempt to build the project without making any changes.  Several  compiler errors will be presented to you as a guide of what steps need to be completed next.  The idea is that by fixing the user-defined compiler errors you will reach a point where the base EasyPIC project compiles correctly and will run on your target device.  After the compiler errors have been resolved you can begin writing your project code in app.c.
 
 ## Adding Modules
-The basic project isn't very interesting by itself but it helps you understand the philosophy behing the EasyPIC project which is to create code modules in such a way that by correcting a serious of helpful user-defined compiler errors you are guided to a working implementation.
+The basic project isn't very interesting by itself but it helps you understand the philosophy behind the EasyPIC project which is to create code modules in such a way that by correcting a serious of helpful user-defined compiler errors you are guided to a working implementation.
 
 Adding modules to the project is a simple process that is a lot like the initial project setup.
 
-<i>ADD MORE INFO HERE</i>
+<i>MORE INFO COMING</i>
