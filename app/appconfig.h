@@ -130,13 +130,27 @@
 
 
 #error CLOCK SETTINGS: Define clock speeds based on how you previously set the configuration bits
-// TODO: Remove the error, uncomment the defines below and set them to 
-// the appropriate values for your application.
+// TODO: Remove the error and set the three defines below to the
+// appropriate values for your application. PERIPHERAL_DIVISOR and
+// INSTRUCTION_DIVISOR depend on the device you are using.
+// In some devices like PIC18 devices the peripheral and instruction 
+// clock cycles consist of 4 oscillator cycles so the divisor would be 4.
 
-//#define CLOCK_FREQ              80000000L
-//#define GetSystemClock()        (80000000ul)
-//#define GetPeripheralClock()    (GetSystemClock()/4) 
-//#define GetInstructionClock()   (GetSystemClock())
+//#define CLOCK_FREQ              (16000000ul)
+//#define PERIPHERAL_DIVISOR      4
+//#define INSTRUCTION_DIVISOR     4
+
+#if(!defined(CLOCK_FREQ) || !defined(PERIPHERAL_DIVISOR) || !defined(INSTRUCTION_DIVISOR))
+#error You must define CLOCK_FREQ, PERIPHERAL_DIVISOR, and INSTRUCTION_DIVISOR
+#endif
+
+// The following are defined to provide specific defines for various
+// libraries.  All are based on the CLOCK_FREQ above and should not
+// be changed.
+#define _XTAL_FREQ              CLOCK_FREQ
+#define GetSystemClock()        CLOCK_FREQ 
+#define GetPeripheralClock()    (GetSystemClock()/PERIPHERAL_DIVISOR)
+#define GetInstructionClock()   (GetSystemClock()/INSTRUCTION_DIVISOR)
 
 // ==================================================================
 //                        I/O PIN SETTINGS
